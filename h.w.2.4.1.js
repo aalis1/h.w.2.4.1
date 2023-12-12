@@ -16,46 +16,29 @@ let expencesExamples = [
   },
 ];
 
-console.log(expencesExamples);
-
-// сумма всех 3 массивов сразу выводится
-
-sum = 0;
 expencesExamples.forEach((exp) => {
+  sum = 0;
   exp.yearlyExpences.forEach((element) => {
     if (element > 1000) {
       sum += element;
       return sum;
     }
   });
+  console.log(`sum = ${sum}`);
 });
-console.log(`sum all 3 = ${sum}`);
+
+// далее прокидываем функцию прям в цикл, чтобы предать в нее динамические параметры.
+
+// expencesExamples.forEach((exp) => {
+//   testCalc(exp, 15000);
+// });
+
+// function testCalc(value, expectedValue) {
+//   if (value === expectedValue) {
+//     console.log("test done");
+//   } else {
+//     console.log("test failed");
+//   }
+// }
 
 //или вот так на каждый массив. Но есть наверное возможность написать код, чтоб сразу считался каждый массив
-
-sum = 0;
-expencesExamples[0].yearlyExpences.forEach((element) => {
-  if (element > 1000) {
-    sum += element;
-    return sum;
-  }
-});
-console.log(`sum first = ${sum}`);
-
-sum = 0;
-expencesExamples[1].yearlyExpences.forEach((element) => {
-  if (element > 1000) {
-    sum += element;
-    return sum;
-  }
-});
-console.log(`sum second = ${sum}`);
-
-sum = 0;
-expencesExamples[2].yearlyExpences.forEach((element) => {
-  if (element > 1000) {
-    sum += element;
-    return sum;
-  }
-});
-console.log(`sum third = ${sum}`);
