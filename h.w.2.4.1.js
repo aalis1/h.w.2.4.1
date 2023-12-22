@@ -16,19 +16,6 @@ let expencesExamples = [
   },
 ];
 
-expencesExamples.forEach((exp) => {
-  sum = 0;
-  exp.yearlyExpences.forEach((element) => {
-    if (element > 1000) {
-      sum += element;
-      return sum;
-    }
-  });
-});
-testFn(sum, 15000);
-testFn(sum, 12000);
-testFn(sum, 14000);
-
 function testFn(sum, expectedResult) {
   if (sum === expectedResult) {
     console.log(`passed`);
@@ -38,3 +25,16 @@ function testFn(sum, expectedResult) {
     );
   }
 }
+
+expencesExamples.forEach((exp) => {
+  sum = 0;
+  exp.yearlyExpences.forEach((element) => {
+    if (element > 1000) {
+      sum += element;
+      return sum;
+    }
+  });
+  testFn(sum, 15000);
+  testFn(sum, 12000);
+  testFn(sum, 14000);
+});
