@@ -24,21 +24,17 @@ expencesExamples.forEach((exp) => {
       return sum;
     }
   });
-  console.log(`sum = ${sum}`);
 });
+testFn(sum, 15000);
+testFn(sum, 12000);
+testFn(sum, 14000);
 
-// далее прокидываем функцию прям в цикл, чтобы предать в нее динамические параметры.
-
-// expencesExamples.forEach((exp) => {
-//   testCalc(exp, 15000);
-// });
-
-// function testCalc(value, expectedValue) {
-//   if (value === expectedValue) {
-//     console.log("test done");
-//   } else {
-//     console.log("test failed");
-//   }
-// }
-
-//или вот так на каждый массив. Но есть наверное возможность написать код, чтоб сразу считался каждый массив
+function testFn(sum, expectedResult) {
+  if (sum === expectedResult) {
+    console.log(`passed`);
+  } else {
+    console.log(
+      `Result is different - ${sum} is not a same as ${expectedResult}`
+    );
+  }
+}
